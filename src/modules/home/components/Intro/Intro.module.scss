@@ -1,24 +1,40 @@
 .container {
-	padding-top: 138px;
-	background: url('../../assets/blur.svg') no-repeat;
-	background-position-x: center;
-	background-position-y: top;
-	background-size: contain;
-	margin-bottom: 200px;
+	@include flex(center, center, 24px);
+	padding-block: 210px 200px;
+	margin-top: -80px;
+	position: relative;
+
+	@include pseudo(before, false) {
+		background: url('../../assets/blur.svg') no-repeat;
+		background-size: contain;
+		background-position-x: center;
+		height: 100%;
+		width: 100%;
+		left: 50%;
+		top: -50%;
+		z-index: 1;
+		transform: translateX(-50%);
+
+		@include media($mobile-bp) {
+			top: -20%;
+		}
+	}
 
 	@include media($mobile-bp) {
-		padding-top: 40px;
-		margin-bottom: 100px;
-		background-position-y: bottom;
+		padding-block: 120px 100px;
+		flex-direction: column;
+		gap: 0;
 	}
 }
 
 .info {
-	@include flex(center, center, 29px);
+	@include flex(flex-start, center, 50px);
+	flex-direction: column;
+	width: 50%;
 
 	@include media($mobile-bp) {
-		flex-direction: column;
-		align-items: baseline;
+		width: 100%;
+		gap: 20px;
 	}
 
 	&Title {
@@ -26,33 +42,29 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		color: var(--bold-text);
-		text-align: right;
 
 		@include media($mobile-bp) {
 			font-size: 32px;
-			text-align: left;
 		}
 	}
 
 	&Desc {
-		max-width: 342px;
+		max-width: 417px;
 	}
 }
 
 .poster {
-	width: 100%;
-	max-height: 550px;
-	border-radius: 70px;
+	width: 50%;
+	max-height: 530px;
 	overflow: hidden;
-	margin-top: 130px;
 
 	@include media($mobile-bp) {
 		margin-top: 65px;
-		border-radius: 40px;
+		width: 100%;
+		max-height: fit-content;
 	}
 
 	img {
-		display: block;
 		width: 100%;
 		height: auto;
 	}
