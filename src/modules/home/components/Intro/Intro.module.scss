@@ -60,12 +60,11 @@
 
 	@include media($mobile-bp) {
 		margin-top: 65px;
-		width: 100%;
-		max-height: fit-content;
+		width: 60%;
 	}
 
 	img {
-		width: 100%;
+		display: block;
 		height: auto;
 	}
 }
