@@ -2,20 +2,18 @@
 	@include flex(center, center, 24px);
 	padding-block: 210px 200px;
 	margin-top: -80px;
-	position: relative;
 
-	@include pseudo(before, false) {
+	@include pseudo(before, true) {
 		background: url('../../assets/blur.svg') no-repeat;
 		background-size: contain;
-		height: 100%;
 		width: 100%;
-		left: 50%;
-		top: -50%;
+		height: 100%;
+		left: auto;
+		top: -80px;
 		z-index: 1;
-		transform: translateX(-50%);
 
 		@include media($mobile-bp) {
-			top: -20%;
+			top: -50px;
 		}
 	}
 
@@ -48,13 +46,12 @@
 	}
 
 	&Desc {
-		max-width: 417px;
+		max-width: 432px;
 	}
 }
 
 .poster {
 	width: 50%;
-	max-height: 530px;
 
 	@include media($mobile-bp) {
 		margin-top: 65px;
