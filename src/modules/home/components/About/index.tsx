@@ -1,62 +1,81 @@
 import BlockTitle from '@modules/common/components/BlockTitle';
-import IconFrame from '@modules/common/components/IconFrame';
 import SplitBlocks from '@modules/common/components/SplitBlocks';
-
-import s from './About.module.scss';
-import {advantagesList} from "@modules/home/components/About/data";
 import {FC, type ReactNode} from "react";
+import {COMPANY_ADDRESS, COMPANY_PHONE} from "@utils/const";
 
 const About: FC<{
 	children?: ReactNode
 }> = ({children}) => {
 	return (
 		<section id="about">
-			<BlockTitle title="Про компанію"/>
-
-			<ul className={s.advantages}>
-				{advantagesList.map((item) => (
-					<li className={s.advantagesItem} key={item.desc}>
-						<IconFrame icon={item.icon}/>
-						<p className={s.advantagesDesc}>{item.desc}</p>
-					</li>
-				))}
-			</ul>
+			<BlockTitle title="Про Товариство"/>
 
 			<SplitBlocks
-				title={`ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ "СЕНТ ПРО" (ТОВ "СЕНТ ПРО") зареєстроване як фінансова установа відповідно до Розпорядження Національної комісії`}
+				title={`Інформація ТОВ "ФК "ФІН-РАНГ"`}
 				titleType="text"
 			>
-				<p>
-					Установа здійснює державне регулювання у сфері ринків фінансових
-					послуг від
-					02.06.2020 року № 1123 (Свідоцтво про реєстрацію фінансової установи
-					ФК
-					№В0000145 від 27.01.2021) господарська діяльність установи полягає у
-					наданні фінансових послуг:
-				</p>
-				<ul>
-					<li>надання коштів та банківських металів у кредит;</li>
-					<li>надання послуг з факторингу;</li>
-					<li>надання послуг з фінансового лізингу.</li>
-				</ul>
+				<p><strong>Реквізити</strong></p>
 
-				<p>
-					Ідентифікаційний код юридичної особи: 43580771
-					<br/>
-					Місцезнаходження юридичної особи: Україна, 03056, місто Київ, вул.
-					Борщагівська, буд. 154
-					<br/>
-					Керівник - БОГДАН ОЛЕКСАНДР ЄВГЕНОВИЧ
-					<br/>
-					Звертатися з отримання фінансових послуг можете за адресою: Україна,
-					03056,
-					місто Київ, вул.Борщагівська, будинок 154 або за телефоном
-					+38(091)-481-94-67
-				</p>
-				<p>
-					<strong>Товариство не надає </strong>
-					{`споживчі кредити у розумінні Закону України "Про споживче кредитування" ТОВ «СЕНТ ПРО» не здійснює кредитування фізичних осіб та не здійснює врегулювання простроченої заборгованості фізичних осіб.`}
-				</p>
+				<p>Повне найменування: ТОВАРИСТВО З ОБМЕЖЕНОЮ
+					ВІДПОВІДАЛЬНІСТЮ &quot;ФІНАНСОВА КОМПАНІЯ &quot;ФІН-РАНГ&quot;</p>
+				<p> Скорочене найменування: ТОВ &quot;ФК &quot;ФІН-РАНГ&quot;</p>
+				<p>Ідентифікаційний код: 42888239</p>
+				<p>Місцезнаходження: {COMPANY_ADDRESS}</p>
+				<p>Адреса для листування: {COMPANY_ADDRESS}</p>
+				<p> Регіон: м. Київ</p>
+
+				<br/>
+				<p><strong>Дані про державну реєстрацію</strong></p>
+
+				Дата: 14.03.2019
+				Орган: Печерська районна в місті Києві державна адміністрація
+				<br/>
+				<br/>
+				<p><strong>Види діяльності</strong></p>
+
+				<ul>
+					<li>Основний: 64.99 (Надання інших фінанс
+						ових послуг (крім страхування та
+						пенсійного забезпечення), н.в.і.у.)
+					</li>
+					<li> Додатковий: 64.19 (Інші види грошового посередництва)</li>
+					<li>Додатковий: 64.92 (Інші види кредитування)</li>
+				</ul>
+				<br/>
+				<p><strong>Контакти</strong></p>
+				<ul>
+					<li>Електронна пошта: {' '}
+						<a
+							href="mailto:fk_fin-rang@ukr.net"
+							target="_blank"
+							rel="noreferrer"
+						>
+							fk_fin-rang@ukr.net
+						</a>, {' '}
+						<a
+							href="mailto:fkfinrang@emitents.net.ua"
+							target="_blank"
+							rel="noreferrer"
+						>
+							fkfinrang@emitents.net.ua
+						</a>
+					</li>
+					<li>Телефон: {' '}
+						<a
+							href={`tel:${COMPANY_PHONE}`}
+							target="_blank"
+							rel="noreferrer"
+						>
+							{COMPANY_PHONE}
+						</a>
+					</li>
+				</ul>
+				<br/>
+				<p><strong>УВАГА!</strong> Станом на теперішній час, ТОВ «ФК «ФІН-РАНГ»
+					не
+					надає споживчі кредити у розумінні Закону України
+					&quot;Про споживче кредитування&quot; та не здійснює врегулювання
+					простроченої заборгованості фізичних осіб.</p>
 			</SplitBlocks>
 
 			{children}
