@@ -1,8 +1,8 @@
-# -
+# fin-rang.net.ua
 
 #### `JavaScript / ReactJS / TypeScript / NextJS`
 
-# [https://-/](https://-/)
+# [http://fin-rang.net.ua/](http://fin-rang.net.ua/)
 
 ## Getting Started
 
@@ -28,9 +28,7 @@ result.
 Also use:
 
 - Scss
-- ftp-deploy
-- MUI
--
+- GitHub CI/CD
 
 ## Authors
 
