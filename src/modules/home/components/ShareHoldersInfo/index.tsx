@@ -2,38 +2,43 @@ import Accordion from '@modules/common/components/Accordion';
 import DocumentsList from '@modules/common/components/DocumentsList';
 import SplitBlocks from '@modules/common/components/SplitBlocks';
 import {
-	auditReports,
-	companyShareInfo,
+	archiveDocs,
+	finReports,
+	infoFinService,
 	infoOwnershipStructure,
 	news,
-	reports,
+	publicInfo,
 } from '@modules/home/components/ShareHoldersInfo/data';
 
 const ShareHoldersInfo = () => {
 	return (
 		<SplitBlocks
-			title="Для акціонерів і стейкхолдерів"
+			title="Документи ТОВ «ФК «ФІН-РАНГ»"
 			titleType="heading"
 			anchor="share-holders-info"
 		>
-			<Accordion title="Звітність">
-				<DocumentsList groupList={reports}/>
+			<Accordion title="Публічна та інша інформація">
+				<DocumentsList list={publicInfo} />
+			</Accordion>
+
+			<Accordion title="Інформація про фінансову послугу">
+				<DocumentsList list={infoFinService} />
 			</Accordion>
 
 			<Accordion title="Інформація про структуру власності">
-				<DocumentsList groupList={infoOwnershipStructure}/>
+				<DocumentsList groupList={infoOwnershipStructure} />
 			</Accordion>
 
-			<Accordion title="Новини">
-				<DocumentsList list={news}/>
+			<Accordion title="Повідомлення / Оголошення">
+				<DocumentsList list={news} />
 			</Accordion>
 
-			<Accordion title="Розкриття інформації про ТОВ ФК «ФІН-РАНГ»">
-				<DocumentsList list={companyShareInfo}/>
+			<Accordion title="Фінансова звітність та аудиторські звіти">
+				<DocumentsList groupList={finReports} />
 			</Accordion>
 
-			<Accordion title="Аудиторські звіти">
-				<DocumentsList groupList={auditReports}/>
+			<Accordion title="Архівні документи">
+				<DocumentsList list={archiveDocs} />
 			</Accordion>
 		</SplitBlocks>
 	);
